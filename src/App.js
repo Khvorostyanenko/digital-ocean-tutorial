@@ -5,7 +5,7 @@ import './index.css'
 function App() {
   return (
     <div className="max-w-4xl mx-auto">
-      <header className="App-header bg-green-500">
+      <header className="App-header bg-indigo-100">
         <img src={logo} className="App-logo" alt="logo" />
         <a
           className="App-link"
@@ -27,7 +27,7 @@ function App() {
       </p>
 
       <button className="text-white font-bold bg-purple-700 hover:bg-purple-800 py-2 px-4 rounded">
-        Party with Slurm!
+        Button for Marat
       </button>
 
       <p className="my-5">
