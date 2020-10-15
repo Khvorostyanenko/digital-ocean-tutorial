@@ -11,12 +11,9 @@
     "react-scripts": "3.4.3"
   },
   "scripts": {
-    "build:css": "postcss src/styles/index.css -o src/index.css",
-    "watch:css": "postcss src/styles/index.css -o src/index.css -w",
-    "start": "npm run watch:css & react-scripts start",
-    "build": "npm run build:css && react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "npm-run-all --parallel watch:css start:react",
+    "start:react": "react-scripts start",
+    "watch:css": "postcss src/styles/index.css -o src/index.css -w"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -34,9 +31,10 @@
     ]
   },
   "devDependencies": {
-    "autoprefixer": "^10.0.1",
+    "autoprefixer": "9.8.6",
     "chokidar-cli": "^2.1.0",
     "concurrently": "^5.3.0",
+    "npm-run-all": "^4.1.5",
     "postcss-cli": "^8.1.0",
     "tailwindcss": "^1.9.2"
   }

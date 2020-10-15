@@ -1,11 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './index.css'
 
 function App() {
   return (
     <div className="max-w-4xl mx-auto">
-      <header className="App-header">
+      <header className="App-header bg-green-500">
         <img src={logo} className="App-logo" alt="logo" />
         <a
           className="App-link"
