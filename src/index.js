@@ -1,20 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import App from './App';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import App from './App'
 
-const initialState = [
-  'some description for Marat',
-
-];
-
-function hello(state = initialState, action) {
-  return state;
+const initialState = {
+  alertVisible: false
 }
 
-const store = createStore(hello);
+function rootReducer(state = initialState, action) {
+  switch (action.type) {
+    case 'SHOW_ALERT':
+      return {
+        ...state,
+        alertVisible: true
+      }
+    case 'HIDE_ALERT':
+      return {
+        ...state,
+        alertVisible: false
+      }
+    default:
+      return state
+  }
+}
 
+const store = createStore(rootReducer)
 
 ReactDOM.render(
   <Provider store={store}>
@@ -22,25 +33,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 )
-
-// import {createStore} from 'redux';
-
-// function playlist(state = [], action) {
-//   if (action.type === 'ADD_TRACK') {
-//     return  [
-//       ...state,
-//       action.payload
-//     ];
-//   }
-//   return state;
-// }
-
-// const store = createStore(playlist);
-
-
-// store.subscribe (() => {
-//   console.log('subscribe', store.getState());
-// })
-
-// store.dispatch({ type: 'ADD_TRACK', payload: 'Smells like tin spirit'});
-// store.dispatch({ type: 'ADD_TRACK', payload: 'Enter Sandman'});
